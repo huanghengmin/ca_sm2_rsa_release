@@ -285,7 +285,7 @@ function signRequest(grid_panel, store) {
 };
 
 function show_flag(value, p, r) {
-    if (r.get("certStatus") == "0"&&r.get("desc") == "0") {
+    if (r.get("certStatus") == "0" && r.get("desc") == "0") {
         return String.format(
             '<a id="modifyUser.info" href="javascript:void(0);" onclick="modifyUser();return false;"style="color: green;">更新证书</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="restoreUser.info" href="javascript:void(0);" onclick="restoreUser();return false;"style="color: green;">恢复证书</a>&nbsp;&nbsp;&nbsp;' +
@@ -293,19 +293,20 @@ function show_flag(value, p, r) {
             '<a id="retryUser.info" href="javascript:void(0);" onclick="retryUser();return false;"style="color: green;">重发证书</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="viewInfo.info" href="javascript:void(0);" onclick="viewInfo();return false;"style="color: green;">查看详细</a> &nbsp;&nbsp;&nbsp;'
         );
-    } if (r.get("certStatus") == "0"&&r.get("desc") == "1") {
+    }
+    if (r.get("certStatus") == "0" && r.get("desc") == "1") {
         return String.format(
             '<a id="revokeUser.info" href="javascript:void(0);" onclick="revokeUser();return false;"style="color: green;">吊销证书</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="retryUser.info" href="javascript:void(0);" onclick="retryUser();return false;"style="color: green;">重发证书</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="viewInfo.info" href="javascript:void(0);" onclick="viewInfo();return false;"style="color: green;">查看详细</a> &nbsp;&nbsp;&nbsp;'
         );
-    } else if(r.get("certStatus") == "1"&&r.get("desc") == "0") {
+    } else if (r.get("certStatus") == "1" && r.get("desc") == "0") {
         return String.format(
             '<a id="destroyUser.info" href="javascript:void(0);" onclick="destroyUser();return false;"style="color: green;">注销用户</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="retryUser.info" href="javascript:void(0);" onclick="retryUser();return false;"style="color: green;">重发</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="viewInfo.info" href="javascript:void(0);" onclick="viewInfo();return false;"style="color: green;">查看详细</a> &nbsp;&nbsp;&nbsp;'
         );
-    }else if(r.get("certStatus") == "1"&&r.get("desc") == "1") {
+    } else if (r.get("certStatus") == "1" && r.get("desc") == "1") {
         return String.format(
             '<a id="destroyUser.info" href="javascript:void(0);" onclick="destroyUser();return false;"style="color: green;">注销用户</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="retryUser.info" href="javascript:void(0);" onclick="retryUser();return false;"style="color: green;">重发证书</a>&nbsp;&nbsp;&nbsp;' +
@@ -490,7 +491,7 @@ function signUser(grid) {
                 regex: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
                 regexText: '只能输入数字,字母,中文!',
                 id: 'add_x509User_cn',
-                value:'test1234',
+                value: 'test1234',
                 allowBlank: false,
                 blankText: "不能为空，请正确填写",
                 listeners: {
@@ -535,7 +536,7 @@ function signUser(grid) {
                 regex: /^(\d{6})()?(\d{4})(\d{2})(\d{2})(\d{3})([0-9xX])$/,
                 regexText: '请输入有效的身份证号',
                 allowBlank: false,
-                value:'111111111111111111',
+                value: '111111111111111111',
                 blankText: "请填写数字 ，不能为空，请正确填写",
                 name: 'x509User.idCard'
             }),
@@ -603,7 +604,7 @@ function signUser(grid) {
                 regex: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
                 regexText: '只能输入数字,字母,中文!',
                 id: 'add_x509User_city',
-                value:'北京市',
+                value: '北京市',
                 allowBlank: false,
                 blankText: "不能为空，请正确填写所在城市/乡镇"
             }),
@@ -611,7 +612,7 @@ function signUser(grid) {
                 fieldLabel: '公司/团体',
                 emptyText: "请输入所在公司/团体",
                 allowBlank: false,
-                value:'杭州创谐',
+                value: '杭州创谐',
                 regex: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
                 regexText: '只能输入数字,字母,中文!',
                 id: 'add_x509User_organization',
@@ -622,7 +623,7 @@ function signUser(grid) {
                 fieldLabel: '部门/机构',
                 emptyText: "请输入所在部门/机构",
                 allowBlank: false,
-                value:'研发部',
+                value: '研发部',
                 regex: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
                 regexText: '只能输入数字,字母,中文!',
                 blankText: "不能为空，请正确填写",
@@ -632,7 +633,7 @@ function signUser(grid) {
             new Ext.form.TextField({
                 emptyText: "请输入联系电话",
                 fieldLabel: '联系电话',
-                value:'6556119',
+                value: '6556119',
                 name: 'x509User.phone',
                 id: 'add_x509User_phone',
                 regex: /^(1[3,4,5,8,7]{1}[\d]{9})|(((400)-(\d{3})-(\d{4}))|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{3,7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)$/,
@@ -645,7 +646,7 @@ function signUser(grid) {
             new Ext.form.TextField({
                 emptyText: "请输入联系地址",
                 fieldLabel: '联系地址',
-                value:'滨江',
+                value: '滨江',
                 regex: /^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
                 regexText: '只能输入数字,字母,中文!',
                 name: 'x509User.address',
@@ -655,7 +656,7 @@ function signUser(grid) {
             }),
             new Ext.form.TextField({
                 fieldLabel: '电子邮件',
-                value:'465@163.com',
+                value: '465@163.com',
                 emptyText: "请输入电子邮件",
                 regex: /^[0-9a-zA-Z_\-\.]+@[0-9a-zA-Z_\-]+(\.[0-9a-zA-Z_\-]+)*$/,
                 regexText: '请输入有效的邮件地址',
@@ -667,7 +668,7 @@ function signUser(grid) {
             new Ext.form.TextField({
                 fieldLabel: '警员编号',
                 emptyText: "请输入警员编号",
-                value:'123456',
+                value: '123456',
                 id: 'add_x509User_employeeCode',
                 name: 'x509User.employeeCode',
                 allowBlank: false,
@@ -756,118 +757,118 @@ function signUser(grid) {
                             if (sid == "yes") {
                                 var csp = Ext.getCmp("add_x509User_smartCard_csp").getValue();
                                 // if(csp =="General Cryptographic Service Provider 23208"){
-                                if(csp =="Sonicom Beijing Crypto Provider v2.0"){
-                                    //生成卡内密钥
-                                    var fso = new ActiveXObject("Scripting.FileSystemObject");
-                                    var folder = fso.GetSpecialFolder(2);
-                                    var cn = Ext.getCmp("add_x509User_cn").getValue();
-                                    var province = Ext.getCmp("add_x509User_province").getRawValue();
-                                    var city = Ext.getCmp("add_x509User_city").getRawValue();
-                                    var o = Ext.getCmp("add_x509User_organization").getValue();
-                                    var ou = Ext.getCmp("add_x509User_institution").getValue();
-                                    var e = Ext.getCmp("add_x509User_userEmail").getValue();
-                                    var  idCard= Ext.getCmp("add_x509User_idCard").getValue();
-                                    var  phone= Ext.getCmp("add_x509User_phone").getValue();
-                                    var  address= Ext.getCmp("add_x509User_address").getValue();
-                                    var  employeeCode= Ext.getCmp("add_x509User_employeeCode").getValue();
+                                /*   if(csp =="Sonicom Beijing Crypto Provider v2.0"){
+                                 //生成卡内密钥
+                                 var fso = new ActiveXObject("Scripting.FileSystemObject");
+                                 var folder = fso.GetSpecialFolder(2);
+                                 var cn = Ext.getCmp("add_x509User_cn").getValue();
+                                 var province = Ext.getCmp("add_x509User_province").getRawValue();
+                                 var city = Ext.getCmp("add_x509User_city").getRawValue();
+                                 var o = Ext.getCmp("add_x509User_organization").getValue();
+                                 var ou = Ext.getCmp("add_x509User_institution").getValue();
+                                 var e = Ext.getCmp("add_x509User_userEmail").getValue();
+                                 var  idCard= Ext.getCmp("add_x509User_idCard").getValue();
+                                 var  phone= Ext.getCmp("add_x509User_phone").getValue();
+                                 var  address= Ext.getCmp("add_x509User_address").getValue();
+                                 var  employeeCode= Ext.getCmp("add_x509User_employeeCode").getValue();
 
-                                    var container = Ext.getCmp("add_x509User_smartCard_container").getValue();
-                                    var key_type = Ext.getCmp("add_x509User_key_type").getValue();
-                                    var p10_data = "CN = "+cn+",OU = "+ou+",O = "+o+",L = "+city+",S = "+province+",C = CN,E = "+e;
-                                    // alert(p10_data+","+key_type+","+csp);
-                                    var csrData = ZdActivex.CreateRequest(p10_data, csp,key_type,container);
-                                    // alert(csrData);
-                                    // alert(idCard+","+phone+","+address+","+employeeCode);
+                                 var container = Ext.getCmp("add_x509User_smartCard_container").getValue();
+                                 var key_type = Ext.getCmp("add_x509User_key_type").getValue();
+                                 var p10_data = "CN = "+cn+",OU = "+ou+",O = "+o+",L = "+city+",S = "+province+",C = CN,E = "+e;
+                                 // alert(p10_data+","+key_type+","+csp);
+                                 var csrData = ZdActivex.CreateRequest(p10_data, csp,key_type,container);
+                                 // alert(csrData);
+                                 // alert(idCard+","+phone+","+address+","+employeeCode);
 
-                                    //上传证书请求
-                                    if(csrData){
-                                        var myMask = new Ext.LoadMask(Ext.getBody(), {
-                                            msg: '正在签发,请稍后...',
-                                            removeMask: true //完成后移除
+                                 //上传证书请求
+                                 if(csrData){
+                                 var myMask = new Ext.LoadMask(Ext.getBody(), {
+                                 msg: '正在签发,请稍后...',
+                                 removeMask: true //完成后移除
+                                 });
+                                 myMask.show();
+                                 Ext.Ajax.request({
+                                 url: "../../X509UserAction_signJsClientRequest.action",
+                                 timeout: 5 * 60 * 1000,
+                                 method: "POST",
+                                 params: {
+                                 // csrData: Ext.util.base64.encode(csrData),
+                                 csrData: csrData,
+                                 idCard:idCard,
+                                 phone:phone,
+                                 address:address,
+                                 employeeCode:employeeCode
+                                 },
+                                 success: function (res, action) {
+                                 myMask.hide();
+                                 var respText = Ext.util.JSON.decode(res.responseText);
+                                 var url = respText.url;
+                                 var success = respText.success;
+                                 if (success) {
+                                 // alert(url);
+                                 var cerFilePath = folder + "/" + cn + ".der";
+                                 // alert(cerFilePath);
+                                 if (url != null) {
+                                 //下载证书文件
+                                 var d_flag = ZdActivex.DownLoadToLocal(url, cerFilePath);
+                                 // alert(d_flag);
+                                 //写入证书文件
+                                 if (d_flag) {
+                                 var w_flag = ZdActivex.UkeyWriteCert(csp, cerFilePath,container);
+                                 if (w_flag) {
+                                 Ext.Msg.alert("提示", " 用户证书写入完成!");
+                                 } else {
+                                 Ext.Msg.alert("提示", " 用户证书写入失败!");
+                                 }
+                                 } else {
+                                 Ext.Msg.alert("提示", " 读取证书失败!");
+                                 }
+                                 } else {
+                                 Ext.Msg.alert("提示", " 签发证书失败!");
+                                 }
+                                 }else {
+                                 var msg = respText.msg;
+                                 Ext.Msg.alert("提示", msg);
+                                 }
+                                 },
+                                 failure: function (res, action) {
+                                 myMask.hide();
+                                 Ext.Msg.alert("提示", "服务器请求失败");
+                                 }
+                                 });
+                                 }else {
+                                 Ext.Msg.alert("提示", " 生成证书请求失败!");
+                                 }
+
+                                 }else {*/
+                                formPanel.getForm().submit({
+                                    url: '../../X509UserAction_signX509User.action',
+                                    timeout: 20 * 60 * 1000,
+                                    method: 'POST',
+                                    waitTitle: '系统提示',
+                                    waitMsg: '正在连接...',
+                                    success: function () {
+                                        var cn = Ext.getCmp("add_x509User_cn").getValue();
+                                        var type = Ext.getCmp("add_x509User_smartCard_type").getRawValue();
+                                        var container = Ext.getCmp("add_x509User_smartCard_container").getValue();
+                                        var key_type = Ext.getCmp("add_x509User_key_type").getValue();
+                                        getDownUrl(grid, win, cn, csp, type, container, ZdActivex, key_type);
+                                    },
+                                    failure: function (form, action) {
+                                        var json = Ext.decode(action.response.responseText);
+                                        var msg = json.msg;
+                                        Ext.MessageBox.show({
+                                            title: '信息',
+                                            width: 250,
+                                            msg: msg,
+                                            buttons: Ext.MessageBox.OK,
+                                            buttons: {'ok': '确定'},
+                                            icon: Ext.MessageBox.ERROR,
+                                            closable: false
                                         });
-                                        myMask.show();
-                                        Ext.Ajax.request({
-                                            url: "../../X509UserAction_signJsClientRequest.action",
-                                            timeout: 5 * 60 * 1000,
-                                            method: "POST",
-                                            params: {
-                                                // csrData: Ext.util.base64.encode(csrData),
-                                                csrData: csrData,
-                                                idCard:idCard,
-                                                phone:phone,
-                                                address:address,
-                                                employeeCode:employeeCode
-                                            },
-                                            success: function (res, action) {
-                                                myMask.hide();
-                                                var respText = Ext.util.JSON.decode(res.responseText);
-                                                var url = respText.url;
-                                                var success = respText.success;
-                                                if (success) {
-                                                    // alert(url);
-                                                    var cerFilePath = folder + "/" + cn + ".der";
-                                                    // alert(cerFilePath);
-                                                    if (url != null) {
-                                                        //下载证书文件
-                                                        var d_flag = ZdActivex.DownLoadToLocal(url, cerFilePath);
-                                                        // alert(d_flag);
-                                                        //写入证书文件
-                                                        if (d_flag) {
-                                                            var w_flag = ZdActivex.UkeyWriteCert(csp, cerFilePath,container);
-                                                            if (w_flag) {
-                                                                Ext.Msg.alert("提示", " 用户证书写入完成!");
-                                                            } else {
-                                                                Ext.Msg.alert("提示", " 用户证书写入失败!");
-                                                            }
-                                                        } else {
-                                                            Ext.Msg.alert("提示", " 读取证书失败!");
-                                                        }
-                                                    } else {
-                                                        Ext.Msg.alert("提示", " 签发证书失败!");
-                                                    }
-                                                }else {
-                                                    var msg = respText.msg;
-                                                    Ext.Msg.alert("提示", msg);
-                                                }
-                                            },
-                                            failure: function (res, action) {
-                                                myMask.hide();
-                                                Ext.Msg.alert("提示", "服务器请求失败");
-                                            }
-                                        });
-                                    }else {
-                                        Ext.Msg.alert("提示", " 生成证书请求失败!");
                                     }
-
-                                }else {
-                                    formPanel.getForm().submit({
-                                        url: '../../X509UserAction_signX509User.action',
-                                        timeout: 20 * 60 * 1000,
-                                        method: 'POST',
-                                        waitTitle: '系统提示',
-                                        waitMsg: '正在连接...',
-                                        success: function () {
-                                            var cn = Ext.getCmp("add_x509User_cn").getValue();
-                                            var type = Ext.getCmp("add_x509User_smartCard_type").getRawValue();
-                                            var container = Ext.getCmp("add_x509User_smartCard_container").getValue();
-                                            var key_type = Ext.getCmp("add_x509User_key_type").getValue();
-                                            getDownUrl(grid, win, cn, csp, type, container, ZdActivex, key_type);
-                                        },
-                                        failure: function (form, action) {
-                                            var json = Ext.decode(action.response.responseText);
-                                            var msg = json.msg;
-                                            Ext.MessageBox.show({
-                                                title: '信息',
-                                                width: 250,
-                                                msg: msg,
-                                                buttons: Ext.MessageBox.OK,
-                                                buttons: {'ok': '确定'},
-                                                icon: Ext.MessageBox.ERROR,
-                                                closable: false
-                                            });
-                                        }
-                                    });
-                                }
+                                });
+                                // }
                             }
                         })
                     }
@@ -1585,15 +1586,15 @@ function getDownUrl(grid, win, CN, csp, type, name, ZdActivex, keyType) {
             var respText = Ext.util.JSON.decode(res.responseText);
             var Url = respText.url;
             var cn = respText.cn;
+            var certType = respText.certType;
             var fso = new ActiveXObject("Scripting.FileSystemObject");
             var folder = fso.GetSpecialFolder(2);
             try {
                 var filePath = folder + "/" + cn + ".pfx";
                 var flag = ZdActivex.DownLoadToLocal(Url, filePath);
                 if (flag == 1) {
-                    if (keyType == 1) {
-                        var i_flag = ZdActivex.ImportExchangePFX(csp, filePath, "", name);
-                        // alert(i_flag)
+                    if (certType == "sm2") {
+                        var i_flag = ZdActivex.ImportSM2Certificate(filePath, "", name);
                         if (i_flag == 1) {
                             Ext.Ajax.request({
                                 url: "../../X509UserAction_modifyUserSmartCard.action",
@@ -1608,28 +1609,54 @@ function getDownUrl(grid, win, CN, csp, type, name, ZdActivex, keyType) {
                                     Ext.Msg.alert("提示", type + "更新发证状态失败!");
                                 }
                             });
-                        } else {
+                        }
+                        else {
                             Ext.Msg.alert("提示", type + " 签发证书失败!");
                         }
-                    } else if (keyType == 2) {
-                        var i_flag = ZdActivex.ImportPFX(csp, filePath, "", name);
-                        // alert(i_flag)
-                        if (i_flag == 1) {
-                            Ext.Ajax.request({
-                                url: "../../X509UserAction_modifyUserSmartCard.action",
-                                waitTitle: '请等待',
-                                waitMsg: '正在提交',
-                                params: {type: type, CN: CN},
-                                success: function (res, action) {
-                                    grid.getStore().reload();
-                                    win.close();
-                                },
-                                failure: function (res, action) {
-                                    Ext.Msg.alert("提示", type + "更新发证状态失败!");
-                                }
-                            });
-                        } else {
-                            Ext.Msg.alert("提示", type + " 签发证书失败!");
+                    } else {
+                        if (keyType == 1) {
+                            var i_flag = ZdActivex.ImportExchangePFX(csp, filePath, "", name);
+                            // alert(i_flag)
+                            if (i_flag == 1) {
+                                Ext.Ajax.request({
+                                    url: "../../X509UserAction_modifyUserSmartCard.action",
+                                    waitTitle: '请等待',
+                                    waitMsg: '正在提交',
+                                    params: {type: type, CN: CN},
+                                    success: function (res, action) {
+                                        grid.getStore().reload();
+                                        win.close();
+                                    },
+                                    failure: function (res, action) {
+                                        Ext.Msg.alert("提示", type + "更新发证状态失败!");
+                                    }
+                                });
+                            }
+                            else {
+                                Ext.Msg.alert("提示", type + " 签发证书失败!");
+                            }
+                        }
+                        else if (keyType == 2) {
+                            var i_flag = ZdActivex.ImportPFX(csp, filePath, "", name);
+                            // alert(i_flag)
+                            if (i_flag == 1) {
+                                Ext.Ajax.request({
+                                    url: "../../X509UserAction_modifyUserSmartCard.action",
+                                    waitTitle: '请等待',
+                                    waitMsg: '正在提交',
+                                    params: {type: type, CN: CN},
+                                    success: function (res, action) {
+                                        grid.getStore().reload();
+                                        win.close();
+                                    },
+                                    failure: function (res, action) {
+                                        Ext.Msg.alert("提示", type + "更新发证状态失败!");
+                                    }
+                                });
+                            }
+                            else {
+                                Ext.Msg.alert("提示", type + " 签发证书失败!");
+                            }
                         }
                     }
                     if (type == "TFCard") {
@@ -1952,7 +1979,7 @@ function retryUser() {
                             if (sid == "yes") {
                                 var csp = Ext.getCmp("restoreUser_smartCard_csp").getValue();
                                 // if(csp =="General Cryptographic Service Provider 23208"){
-                                if(csp =="Sonicom Beijing Crypto Provider v2.0"){
+                                if (csp == "Sonicom Beijing Crypto Provider v2.0") {
                                     //生成卡内密钥
                                     var fso = new ActiveXObject("Scripting.FileSystemObject");
                                     var folder = fso.GetSpecialFolder(2);
@@ -1964,12 +1991,12 @@ function retryUser() {
                                     var e = recode.get("userEmail");
                                     var container = Ext.getCmp("restoreUser_smartCard_container").getValue();
                                     var key_type = Ext.getCmp("restoreUser_x509User_key_type").getValue();
-                                    var p10_data = "CN = "+cn+",OU = "+ou+",O = "+o+",L = "+city+",S = "+province+",C = CN,E = "+e;
+                                    var p10_data = "CN = " + cn + ",OU = " + ou + ",O = " + o + ",L = " + city + ",S = " + province + ",C = CN,E = " + e;
                                     // alert(p10_data+","+key_type+","+csp);
-                                    var csrData = ZdActivex.CreateRequest(p10_data, csp,key_type,container);
+                                    var csrData = ZdActivex.CreateRequest(p10_data, csp, key_type, container);
                                     // alert(csrData);
                                     //上传证书请求
-                                    if(csrData){
+                                    if (csrData) {
                                         var myMask = new Ext.LoadMask(Ext.getBody(), {
                                             msg: '正在签发,请稍后...',
                                             removeMask: true //完成后移除
@@ -1996,7 +2023,7 @@ function retryUser() {
                                                         // alert(d_flag);
                                                         //写入证书文件
                                                         if (d_flag) {
-                                                            var w_flag = ZdActivex.UkeyWriteCert(csp, cerFilePath,container);
+                                                            var w_flag = ZdActivex.UkeyWriteCert(csp, cerFilePath, container);
                                                             if (w_flag) {
                                                                 Ext.Msg.alert("提示", " 用户证书写入完成!");
                                                             } else {
@@ -2008,7 +2035,7 @@ function retryUser() {
                                                     } else {
                                                         Ext.Msg.alert("提示", " 签发证书失败!");
                                                     }
-                                                }else {
+                                                } else {
                                                     var msg = respText.msg;
                                                     Ext.Msg.alert("提示", msg);
                                                 }
@@ -2018,11 +2045,11 @@ function retryUser() {
                                                 Ext.Msg.alert("提示", "服务器请求失败");
                                             }
                                         });
-                                    }else {
+                                    } else {
                                         Ext.Msg.alert("提示", " 生成证书请求失败!");
                                     }
 
-                                }else {
+                                } else {
                                     var cn = recode.get("cn");
                                     var type = Ext.getCmp("restoreUser_smartCard_type").getRawValue();
                                     var container = Ext.getCmp("restoreUser_smartCard_container").getValue();
@@ -2120,63 +2147,63 @@ function batchSignUser(grid) {
                                 var msg = action.result.msg;
                                 myMask.hide();
                                 Ext.Msg.show({
-                                       title: '提示',
-                                       msg: msg,
-                                       width: 600,
-                                       buttons: Ext.MessageBox.OKCANCEL,
-                                      fn: function (sid) {
-                                          if (sid == "ok") {
-                                              var myMask_execute = new Ext.LoadMask(Ext.getBody(), {
-                                                  msg: '正在导入,请稍后...',
-                                                  removeMask: true
-                                              });
-                                              myMask_execute.show();
-                                              formPanel.getForm().submit({
-                                                  url: '../../X509UserBatchImport_batchImportUser.action',
-                                                  timeout: 20 * 60 * 1000,
-                                                  method: "POST",
-                                                  params: {flag: 'true'},
-                                                  success: function (form, action) {
-                                                      myMask_execute.hide();
-                                                      var msg = action.result.msg;
-                                                      grid.getStore().reload();
-                                                      Ext.Msg.alert("提示", msg);
-                                                      win.close();
-                                                  },
-                                                  failure: function (form, action) {
-                                                      myMask_execute.hide();
-                                                      var msg = action.result.msg;
-                                                      Ext.Msg.alert("提示", msg);
-                                                  }
-                                              });
-                                          } else {
-                                              var myMask_execute = new Ext.LoadMask(Ext.getBody(), {
-                                                  msg: '正在导入,请稍后...',
-                                                  removeMask: true
-                                              });
-                                              myMask_execute.show();
-                                              formPanel.getForm().submit({
-                                                  url: '../../X509UserBatchImport_batchImportUser.action',
-                                                  timeout: 20 * 60 * 1000,
-                                                  method: "POST",
-                                                  params: {flag: 'false'},
-                                                  success: function (form, action) {
-                                                      myMask_execute.hide();
-                                                      var msg = action.result.msg;
-                                                      grid.getStore().reload();
-                                                      Ext.Msg.alert("提示", msg);
-                                                      win.close();
-                                                  },
-                                                  failure: function (form, action) {
-                                                      myMask_execute.hide();
-                                                      var msg = action.result.msg;
-                                                      Ext.Msg.alert("提示", msg);
-                                                  }
-                                              });
-                                          }
-                                      },
-                                      animEl: 'addAddressBtn',
-                                       icon: Ext.MessageBox.INFO
+                                    title: '提示',
+                                    msg: msg,
+                                    width: 600,
+                                    buttons: Ext.MessageBox.OKCANCEL,
+                                    fn: function (sid) {
+                                        if (sid == "ok") {
+                                            var myMask_execute = new Ext.LoadMask(Ext.getBody(), {
+                                                msg: '正在导入,请稍后...',
+                                                removeMask: true
+                                            });
+                                            myMask_execute.show();
+                                            formPanel.getForm().submit({
+                                                url: '../../X509UserBatchImport_batchImportUser.action',
+                                                timeout: 20 * 60 * 1000,
+                                                method: "POST",
+                                                params: {flag: 'true'},
+                                                success: function (form, action) {
+                                                    myMask_execute.hide();
+                                                    var msg = action.result.msg;
+                                                    grid.getStore().reload();
+                                                    Ext.Msg.alert("提示", msg);
+                                                    win.close();
+                                                },
+                                                failure: function (form, action) {
+                                                    myMask_execute.hide();
+                                                    var msg = action.result.msg;
+                                                    Ext.Msg.alert("提示", msg);
+                                                }
+                                            });
+                                        } else {
+                                            var myMask_execute = new Ext.LoadMask(Ext.getBody(), {
+                                                msg: '正在导入,请稍后...',
+                                                removeMask: true
+                                            });
+                                            myMask_execute.show();
+                                            formPanel.getForm().submit({
+                                                url: '../../X509UserBatchImport_batchImportUser.action',
+                                                timeout: 20 * 60 * 1000,
+                                                method: "POST",
+                                                params: {flag: 'false'},
+                                                success: function (form, action) {
+                                                    myMask_execute.hide();
+                                                    var msg = action.result.msg;
+                                                    grid.getStore().reload();
+                                                    Ext.Msg.alert("提示", msg);
+                                                    win.close();
+                                                },
+                                                failure: function (form, action) {
+                                                    myMask_execute.hide();
+                                                    var msg = action.result.msg;
+                                                    Ext.Msg.alert("提示", msg);
+                                                }
+                                            });
+                                        }
+                                    },
+                                    animEl: 'addAddressBtn',
+                                    icon: Ext.MessageBox.INFO
                                 });
                             },
                             failure: function (form, action) {

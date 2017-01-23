@@ -271,6 +271,7 @@ public class X509UserAction extends ActionSupport {
 //        String DN = request.getParameter("DN");
         //签发DN
         String signDn = X509CaXML.getSignDn();
+        String certType = X509CaXML.getCertType();
         String CN = request.getParameter("CN");
         String DN = DNUtils.add(signDn, CN);
         //得到父路径
@@ -282,7 +283,7 @@ public class X509UserAction extends ActionSupport {
                 .append(URLEncoder.encode(DN, "UTF-8"))
                 .append("&CN=")
                 .append(URLEncoder.encode(CN, "UTF-8"));
-        writer.write("{success:true,url:'" + json.toString() + "',cn:'" + CN + "'}");
+        writer.write("{success:true,url:'" + json.toString() + "',cn:'" + CN + "',certType:'"+certType+"'}");
         writer.close();
         return null;
     }

@@ -64,6 +64,15 @@ public class X509CaXML {
         return null;
     }
 
+    /**
+     *
+     * @return
+     */
+    public static String getCertType(){
+        String certType = getValue(X509CaXML.certType);
+        return certType;
+    }
+
 
     /**
      * 保存
